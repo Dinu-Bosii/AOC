@@ -1,6 +1,3 @@
-//use regex::Regex;
-
-
 fn main() {
     let input: String = std::fs::read_to_string("input.txt").unwrap();
     let parts: Vec<&str> = input.split("\n\n").collect();
@@ -31,9 +28,9 @@ fn main() {
 
     parts[1].lines().for_each(|line| {
         let line_parts: Vec<&str> = line.split_whitespace().collect();
-        let amount: u32 = line_parts[1].parse().unwrap();
-        let from: usize = line_parts[3].parse().unwrap();
-        let to: usize = line_parts[5].parse().unwrap();
+        let amount: u32 = line_parts[1].parse::<u32>().unwrap();
+        let from: usize = line_parts[3].parse::<usize>().unwrap();
+        let to: usize = line_parts[5].parse::<usize>().unwrap();
         for _ in 0..amount {
             let ch: char = stacks[from - 1].pop().unwrap();
             stacks[to - 1].push(ch);
@@ -65,7 +62,7 @@ fn main() {
     }
     parts[1].lines().for_each(|line| {
         let line_parts: Vec<&str> = line.split_whitespace().collect();
-        let amount: u16 = line_parts[1].parse().unwrap();
+        let amount: u32 = line_parts[1].parse().unwrap();
         let from: usize = line_parts[3].parse().unwrap();
         let to: usize = line_parts[5].parse().unwrap();
         for i in (0..amount).rev() {
