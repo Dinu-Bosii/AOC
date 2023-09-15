@@ -14,7 +14,6 @@ fn main() {
             let line_parts: Vec<&str> = line.split_whitespace().collect();
             let letter = line_parts[0];
             let number = line_parts[1].parse::<i16>().unwrap();
-            for _ in 0..number {}
             //Tail goes to Head's last position(doesn't work for part 2)
             match letter {
                 "L" => {
