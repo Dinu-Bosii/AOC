@@ -26,4 +26,7 @@ fn main() {
         });
 
     println!("Sum of signal strengths: {}", sum_signal_strength);
+
+    //Part2
+    let _ = input
 }
